@@ -5,3 +5,4 @@ firebase-admin
 python-dotenv
 google-generativeai
 yt-dlp
+python-dotenv

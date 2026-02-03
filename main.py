@@ -10,8 +10,9 @@ from pydantic import BaseModel
 import google.generativeai as genai
 import yt_dlp
 import os
+from dotenv import load_dotenv
 
-
+load_dotenv()
 app = FastAPI(title="Connectinno Notes API - Firebase Edition")
 
 
@@ -25,7 +26,7 @@ def get_current_user(authorization: Optional[str] = Header(None)):
     except Exception as e:
         raise HTTPException(status_code=401, detail=f"Invalid Token: {str(e)}")
     
-GENAI_API_KEY = "AIzaSyBlmJVC3YRvA4s2MEfyh2_0Y_rak92dDII"
+GENAI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GENAI_API_KEY)
 
 class NoteRequest(BaseModel):
