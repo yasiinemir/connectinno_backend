@@ -3,3 +3,5 @@ uvicorn
 pydantic
 firebase-admin
 python-dotenv
+google-generativeai
+yt-dlp
